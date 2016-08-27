@@ -6,6 +6,7 @@ var timeHelper = require("./utils/timeHelper");
 
 app.set('view engine','jade');
 app.set('views', path.join(__dirname,"templates"));
+app.set('port', (process.env.PORT || 5000));
 
 
 app.get('/:time?', (req,res) => {
@@ -26,6 +27,6 @@ app.get('/:time?', (req,res) => {
     }
 });
 
-app.listen(80,() => {
-    console.log('App is listen at port 80');
+app.listen(app.get('port'),() => {
+    console.log('App is listen at port '+app.get('port'));
 });
