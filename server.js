@@ -19,11 +19,11 @@ app.get('/:time?', (req,res) => {
         }
         
         res.json({
-           unix: time.getTime(),
+           unix: time.getTime()/1000,
            natural:timeHelper.formatDate(time,"MMMM d, yyyy")
         });
     } else {
-        res.render('index',{unix:new Date().getTime(),natural:timeHelper.formatDate(new Date(),"MMMM d, yyyy")});
+        res.render('index',{unix:new Date().getTime()/1000,natural:timeHelper.formatDate(new Date(),"MMMM d, yyyy")});
     }
 });
 
