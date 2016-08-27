@@ -23,7 +23,7 @@ app.get('/:time?', (req,res) => {
            natural:timeHelper.formatDate(time,"MMMM d, yyyy")
         });
     } else {
-        res.render('index');
+        res.render('index',{unix:new Date().getTime(),natural:timeHelper.formatDate(new Date(),"MMMM d, yyyy")});
     }
 });
 
