@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/:time?', (req,res) => {
     var timeStr = req.params.time;
     if (timeStr){
-        var unixTime = +timeStr;
+        var unixTime = (+timeStr)*1000;
         var time = new Date(timeStr);
         if (unixTime){
             time = new Date(+timeStr);
