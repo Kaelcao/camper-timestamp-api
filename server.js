@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var path = require("path");
 
-var timeHelper = require("../utils/timeHelper");
+var timeHelper = require("./utils/timeHelper");
 
 app.set('view engine','jade');
 app.set('views', path.join(__dirname,"templates"));
